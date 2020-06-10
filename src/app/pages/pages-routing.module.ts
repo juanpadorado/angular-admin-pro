@@ -42,6 +42,12 @@ const routes: Routes = [
     loadChildren: () =>
       import('../pages/rxjs/rxjs.module').then((m) => m.RxjsModule),
   },
+  {
+    path: 'perfil',
+    data: { titulo: 'Perfil' },
+    loadChildren: () =>
+      import('../pages/profile/profile.module').then((m) => m.ProfileModule),
+  },
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
 ];
 

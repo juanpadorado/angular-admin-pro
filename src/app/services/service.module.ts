@@ -9,10 +9,11 @@ import {
   UsuarioService,
 } from './service.index';
 import {LoginGuard} from "./guards/login.guard";
+import {SubirArchivoService} from "./subir-archivo/subir-archivo.service";
 
 @NgModule({
   declarations: [],
-  providers: [SettingsService, SharedService, SidebarService, UsuarioService, LoginGuard],
+  providers: [SettingsService, SharedService, SidebarService, UsuarioService, LoginGuard, SubirArchivoService],
   imports: [CommonModule, HttpClientModule],
 })
 export class ServiceModule {}
