@@ -38,7 +38,7 @@ export class ProfileComponent implements OnInit {
       this.imagenSubir = null;
       return;
     }
-    
+
     if (archivio.type.indexOf('image') < 0) {
       Swal.fire({
         title: 'Error!',

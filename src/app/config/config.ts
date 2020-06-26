@@ -6,3 +6,4 @@ export const CLIENTID = '673768645184-qg669cm4qckfca1cqf26b6vr1svvmqjn.apps.goog
 export const IMG = '/img';
 export const ACTUALIZA_USUARIO = '/usuario';
 export const CARGAR_IMAGEN = '/upload';
+export const BUSQUEDA_USUARIOS = '/busqueda/coleccion/usuarios/';

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Usuario } from '../../models/usuario.model';
 import { HttpClient } from '@angular/common/http';
-import {ACTUALIZA_USUARIO, LOGIN, LOGINGOOGLE, URL_SERVICIOS, USUARIO} from '../../config/config';
+import {ACTUALIZA_USUARIO, BUSQUEDA_USUARIOS, LOGIN, LOGINGOOGLE, URL_SERVICIOS, USUARIO} from '../../config/config';
 import { map } from 'rxjs/operators';
 import Swal from 'sweetalert2';
 import {Router} from "@angular/router";
@@ -123,17 +123,28 @@ export class UsuarioService {
       .then((res: any) => {
         this.usuario.img = res.usuario.img;
         this.guardarStorage(id, this.token, this.usuario);
-        Swal.fire({
-          title: 'Exito!',
-          text: 'Imagen actualizada correctamente',
-          icon: 'success',
-          confirmButtonText: 'Aceptar',
-        });
+
 
       })
       .catch(error => {
         console.log(error);
       });
+  }
+
+  cargarUsuarios(desde: number = 0) {
+
+    const url = URL_SERVICIOS + USUARIO + '?desde=' + desde;
+
+    return this.http.get(url);
+  }
+
+  buscarUsuarios(valor: string) {
+
+    const url = URL_SERVICIOS + BUSQUEDA_USUARIOS + valor;
+
+    return this.http.get(url).pipe(
+      map((res: any) => res.usuarios)
+    );
   }
 
 }

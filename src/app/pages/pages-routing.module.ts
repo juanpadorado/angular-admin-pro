@@ -48,6 +48,13 @@ const routes: Routes = [
     loadChildren: () =>
       import('../pages/profile/profile.module').then((m) => m.ProfileModule),
   },
+  //Mantenimientos
+  {
+    path: 'usuarios',
+    data: { titulo: 'Usuarios' },
+    loadChildren: () =>
+      import('../pages/usuarios/usuarios.module').then((m) => m.UsuariosModule),
+  },
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
 ];
 

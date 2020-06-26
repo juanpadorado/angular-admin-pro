@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 
 @Injectable({
   providedIn: 'root',
@@ -31,7 +31,26 @@ export class SidebarService {
         },
       ],
     },
+    {
+      titulo: 'Mantenimientos',
+      icono: 'mdi mdi-folder-lock-open',
+      submenu: [
+        {
+          titulo: 'Usuarios',
+          url: '/pages/usuarios',
+        },
+        {
+          titulo: 'Hospitales',
+          url: '/pages/hospitales',
+        },
+        {
+          titulo: 'Médicos',
+          url: '/pages/medicos',
+        },
+      ]
+    }
   ];
 
-  constructor() {}
+  constructor() {
+  }
 }
